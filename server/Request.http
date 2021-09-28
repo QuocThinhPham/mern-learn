@@ -1,0 +1,69 @@
+
+### check user logged in
+GET http://localhost:8000/api/auth/logged
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUwM2M1MTA0ZjUwMjZkY2FkOTk1YWMiLCJpYXQiOjE2MzI4MjA1MDd9.1Qxv_HtOZHEkfgXgDK01vESe4DIannNlXbS8fszjzdo
+
+### request register
+POST http://localhost:8000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "Peter",
+    "email":"peter@gmail.com",
+    "password":"12345678"
+}
+
+### request login
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"hello@gmail.com",
+    "password":"12345678"
+}
+
+### request get all user
+GET http://localhost:8000/api/users/all
+Content-Type: application/json
+
+
+### request get a user
+GET http://localhost:8000/api/users?userId=614c897c55a2b45959ac3b50&username=fotd123
+Content-Type: application/json
+
+
+### get all posts of a logged user
+GET  http://localhost:8000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUwM2M1MTA0ZjUwMjZkY2FkOTk1YWMiLCJpYXQiOjE2MzI4MjA1MDd9.1Qxv_HtOZHEkfgXgDK01vESe4DIannNlXbS8fszjzdo
+
+
+### create new post
+POST http://localhost:8000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUwM2M1MTA0ZjUwMjZkY2FkOTk1YWMiLCJpYXQiOjE2MzI4MjA1MDd9.1Qxv_HtOZHEkfgXgDK01vESe4DIannNlXbS8fszjzdo
+
+{
+    "title": "abc",
+    "description": "xyz",
+    "url": "socket.io",
+    "status": 2
+}
+
+
+### update exists post
+PUT http://localhost:8000/api/posts/6152dd487654c5d6863cd4a3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUwM2M1MTA0ZjUwMjZkY2FkOTk1YWMiLCJpYXQiOjE2MzI4MjA1MDd9.1Qxv_HtOZHEkfgXgDK01vESe4DIannNlXbS8fszjzdo
+
+{
+    "title": "123",
+    "description": "456",
+    "url": "nodejs.org",
+    "status": 1
+}
+
+
+### delete exists post
+DELETE http://localhost:8000/api/posts/6152dd487654c5d6863cd4a3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTUwM2M1MTA0ZjUwMjZkY2FkOTk1YWMiLCJpYXQiOjE2MzI4MjA1MDd9.1Qxv_HtOZHEkfgXgDK01vESe4DIannNlXbS8fszjzdo
+
